@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  caddy:
+    image: caddy:alpine
+    restart: unless-stopped
+    # cap_add:
+    #   - NET_ADMIN
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "443:443"
+      - "443:443/udp"
+    networks:
+      - indyscan
+    volumes:
+      - ./app-configs-caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

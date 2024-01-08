@@ -1,0 +1,22 @@
+{
+  auto_https off
+}
+
+localhost:80 {
+
+  # Log everything to stdout
+  log {
+    output stdout
+  }
+
+  handle {
+    reverse_proxy indyscan-webapp.indyscan:3707 {
+      header_up Host {upstream_hostport}
+
+      header_down Msg_Host {upstream_hostport}
+      header_down Msg_HostPort {hostport}
+      header_down Msg_X-Forwarded-Host {host}
+      header_down Msg_X-Forwarded-Proto {scheme}
+    }
+  }
+}

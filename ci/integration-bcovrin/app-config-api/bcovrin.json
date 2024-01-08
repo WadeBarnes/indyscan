@@ -1,0 +1,20 @@
+[
+  {
+    "id": "BCOVRIN_TEST",
+    "aliases": [
+      "BCOVRIN_TEST"
+    ],
+    "ui": {
+      "priority": 3,
+      "display": "Test",
+      "display-long": "BCovrin Test",
+      "description": "BCovrin Test Network",
+      "tutorial": "Get your DID and start writing on the network.",
+      "tutorial-link": "http://test.bcovrin.vonx.io/",
+      "logo-address": "/static/hlindy.png"
+    },
+    "es" : {
+      "index": "txs-bcovtest"
+    }
+  }
+]
